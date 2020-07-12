@@ -88,6 +88,18 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
+### 自定义图标颜色
+
+通过 `icon` 选项可以自定义图标，支持传入[图标名称](#/zh-CN/icon)。
+
+```js
+Toast({
+  message: '自定义图标',
+  icon: 'info',
+  color: '#1989fa',
+});
+```
+
 ### 全局方法
 
 引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 `$toast` 方法，便于在组件内调用。
