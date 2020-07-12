@@ -43,12 +43,18 @@
         @click="showImageToast"
       />
     </demo-block>
-
     <demo-block :title="t('updateMessage')">
       <van-button
         type="primary"
         :text="t('updateMessage')"
         @click="showCustomizedToast"
+      />
+    </demo-block>
+    <demo-block :title="t('customIconColor')">
+      <van-button
+        type="primary"
+        :text="t('customIconColor')"
+        @click="showIconToastWithColor"
       />
     </demo-block>
   </demo-section>
@@ -68,6 +74,7 @@ export default {
       text2: '成功文案',
       text3: '失败文案',
       customIcon: '自定义图标',
+      customIconColor: '自定义图标颜色',
       customImage: '展示图片',
       text4: (second) => `倒计时 ${second} 秒`,
       longTextButton: '长文字提示',
@@ -86,6 +93,7 @@ export default {
       text2: 'Success',
       text3: 'Fail',
       customIcon: 'Custom Icon',
+      customIconColor: 'Custom Icon With Color',
       customImage: 'Custom Image',
       text4: (second) => `${second} seconds`,
       longTextButton: 'Long Text',
@@ -142,6 +150,13 @@ export default {
           this.$toast.clear();
         }
       }, 1000);
+    },
+    showIconToastWithColor() {
+      this.$toast({
+        message: this.t('customIconColor'),
+        icon: 'info',
+        color: '#1989fa',
+      });
     },
   },
 };

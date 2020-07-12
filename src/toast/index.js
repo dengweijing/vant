@@ -11,6 +11,7 @@ const defaultOptions = {
   value: true,
   message: '',
   className: '',
+  color: '',
   overlay: false,
   onClose: null,
   onOpened: null,

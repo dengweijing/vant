@@ -22,6 +22,7 @@ export default createComponent({
     forbidClick: Boolean,
     closeOnClick: Boolean,
     message: [Number, String],
+    color: String,
     type: {
       type: String,
       default: 'text',
@@ -89,7 +90,7 @@ export default createComponent({
     },
 
     genIcon() {
-      const { icon, type, iconPrefix, loadingType } = this;
+      const { icon, type, iconPrefix, loadingType, color } = this;
       const hasIcon = icon || type === 'success' || type === 'fail';
 
       if (hasIcon) {
@@ -98,10 +99,10 @@ export default createComponent({
             class={bem('icon')}
             classPrefix={iconPrefix}
             name={icon || type}
+            color={color || ''}
           />
         );
       }
-
       if (type === 'loading') {
         return <Loading class={bem('loading')} type={loadingType} />;
       }
